@@ -1,5 +1,3 @@
-const discord = require('discord.js');
-
 module.exports.run = async (bot, message, args) => {
      if(message.content.includes("@everyone")) return message.reply("Don't try to ping `@everyone`");
      if(message.content.includes("@here")) return message.reply("Don't try to ping `@here`");

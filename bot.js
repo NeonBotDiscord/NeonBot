@@ -2,15 +2,9 @@ const colors = require("colors")
 const { StopWatch } = require('stopwatch-node')
 console.log("Starting NeonBot" .green)
 require('dotenv').config(); //gets dotenv for all the secret stuff
-const discord = require('discord.js'); // discord.js cause its needed
-const log = new discord.WebhookClient(process.env.WEBHOOKID, process.env.WEBHOOKTOKEN); // logging place
+global.discord = require('discord.js'); // discord.js cause its needed
+global.log = new discord.WebhookClient(process.env.WEBHOOKID, process.env.WEBHOOKTOKEN); // logging place
 const bot = new discord.Client({disableEveryone: true}); // bot, and remove @everyone / @here pings :)
-// require('mongoose')
-// 	.connect(`mongodb+srv://Neon:${process.env.DBPASS}@cluster0.7mg93.mongodb.net/NeonBot?retryWrites=true&w=majority`, 
-// 	{
-// 		useNewUrlParser: true,
-// 		useUnifiedTopology: true
-// 	}); // connect to mongodb
 bot.commands = new discord.Collection(); // command collection
 bot.prefix = process.env.PREFIX
 bot.owner = "399973532265742336"
@@ -61,7 +55,7 @@ bot.on('guildDelete', (guild) => {
 bot.login(process.env.BOT_TOKEN); // LOGIN
 /*
 Neon Bot || Made by Neon Richards
-Current version: Pre-Release Alpha A
+Current version: Release 1.2
 Global Prefix: nb?
 Discord Server: https://discord.gg/ZJq6jvH
 Bot Invite: https://discord.com/oauth2/authorize?client_id=728101901668843591&permissions=-1&scope=bot

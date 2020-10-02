@@ -1,5 +1,3 @@
-const discord = require('discord.js');
-
 module.exports.run = async (bot, message, args) => {
 	let sinfoembed = new discord.MessageEmbed()
 		.setTitle(`Server Info for the server ${message.guild.name}`)

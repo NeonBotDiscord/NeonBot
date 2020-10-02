@@ -1,5 +1,3 @@
-const discord = require('discord.js');
-
 module.exports.run = async (bot, message, args) => {
 	console.log(args[0])
 	let comds = bot.commands.get(args[0])

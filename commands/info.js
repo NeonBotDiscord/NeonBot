@@ -1,5 +1,3 @@
-const discord = require('discord.js');
-
 module.exports.run = async (bot, message, args) => {
 	let infoembed = new discord.MessageEmbed()
 		.setTitle('Info Menu')
@@ -8,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 		.addField(`Start Date:`, `NeonBot was created on the 11th of August 2020`)
 		.addField(`Running:`, `NeonBot uses discord.js ${discord.version}`)
 		.addField(`Bot Invite:`, `[Click Here](https://discord.com/oauth2/authorize?client_id=728101901668843591&permissions=-1&scope=bot)`)
-		.addField(`Support Server:`, `[Click Here](https://discord.gg/VxaDcB6)`);
+		.addField(`Support Server:`, `[Click Here](https://discord.gg/ZJq6jvH)`);
 	message.channel.send(infoembed);
 };
 

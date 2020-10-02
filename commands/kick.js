@@ -1,5 +1,3 @@
-const discord = require('discord.js');
-
 module.exports.run = async (bot, message, args) => {
 	if (!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send('You dont have the correct permissions to do that!');
 	if (!message.guild.me.hasPermission('KICK_MEMBERS')) return message.channel.send('NeonBot doesnt have permission to ban this user.');

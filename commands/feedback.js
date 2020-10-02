@@ -1,5 +1,3 @@
-const discord = require('discord.js');
-
 module.exports.run = async (bot, message, args) => {
      if(!args[0]) return message.reply("Remember, this is a formal feedback message to the creators, you have to include something atleast.")
      let feedback = args.join(' ');

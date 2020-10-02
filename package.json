@@ -1,6 +1,6 @@
 {
   "name": "neobot",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "My Official Discord Bot",
   "main": "bot.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
     "mongoose": "^5.10.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.0",
     "node-gyp": "^7.1.0",
     "rebuild": "^0.1.2",
     "stopwatch-node": "^1.0.2",
