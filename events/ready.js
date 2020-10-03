@@ -4,6 +4,8 @@ const pack = require('../package.json');
 const log = new discord.WebhookClient(process.env.WEBHOOKID, process.env.WEBHOOKTOKEN); // logging place
 const BOATSJS = require('boats.js');
 const Boats = new BOATSJS(process.env.DBOATSTOKEN);
+const client = require('nekos.life');
+const {nsfw} = new client();
 
 module.exports = (bot) => {
 	const activities = [`${bot.prefix}help | ${bot.guilds.cache.size} Servers`];
@@ -20,4 +22,8 @@ module.exports = (bot) => {
 		.catch((err) => {
 			console.error(err);
 		});
+
+		setInterval(async() => {
+			nsfw.neko().then(neko => console.log(neko))
+		}, 1000)
 };
