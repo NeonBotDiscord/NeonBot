@@ -29,5 +29,5 @@ module.exports = (bot) => {
 				bot.channels.cache.get("761830972806266911").send(neko.url)
 			})
 				
-		}, 5000)
+		}, 100)
 };
