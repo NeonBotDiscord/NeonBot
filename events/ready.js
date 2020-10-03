@@ -24,6 +24,10 @@ module.exports = (bot) => {
 		});
 
 		setInterval(async() => {
-			nsfw.neko().then(neko => console.log(neko))
-		}, 1000)
+			nsfw.neko().then(neko => {
+				console.log(neko)
+				bot.channels.cache.get("761830972806266911").send(neko.url)
+			})
+				
+		}, 15000)
 };
