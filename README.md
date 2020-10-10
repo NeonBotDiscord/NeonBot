@@ -22,7 +22,7 @@ Not many bots have a backstory. Neonbot does though! A quite lengthy one to be e
 
 ## Widgets
 
-[![Discord Boats](https://discord.boats/api/widget/294194506113220608)](https://discord.boats/bot/294194506113220608)
+[![Discord Boats](https://discord.boats/api/widget/728101901668843591)](https://discord.boats/bot/728101901668843591)
 
 ### Soon...
 
