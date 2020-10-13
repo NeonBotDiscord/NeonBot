@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 module.exports = () => {
-fs.readdir('../commands/', (err, files) => {
+fs.readdir('.../commands/', (err, files) => {
 	if (err) console.log(`${err}`);
 	let jsfile = files.filter((f) => f.split('.').pop() === 'js');
 	if (jsfile.length <= 0) {
