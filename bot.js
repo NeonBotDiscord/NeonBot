@@ -50,7 +50,25 @@ bot.on('ready', async () => {
 });
 
 bot.on('message', async (message) => {
-	require('./events/message')(message);
+     if(!message.content.startsWith(bot.prefix)) return;
+     if(message.author.bot) return;
+     if(message.channel.type === "DM") return;
+     let ArrayMessage = message.content.slice(bot.prefix.length).split(' ')
+     let command = ArrayMessage[0]
+     let args = ArrayMessage.slice(1)
+
+     if(!command) return;
+     let commandfile = bot.commands.get(command)
+     if(!commandfile) return;
+     commandfile.run(bot, message, args)
+     let logmsg = `COMMAND | ${message.author.username} (${message.author.id}) | ${command}`
+     console.log(logmsg)
+     let logem = new discord.MessageEmbed()
+     .setTitle("COMMAND USED")
+     .setDescription(logmsg)
+     .setFooter(`${bot.user.username} Logger`)
+     .setColor("GREEN")
+     log.send(logem)
 });
 
 bot.on('guildCreate', (guild) => {
