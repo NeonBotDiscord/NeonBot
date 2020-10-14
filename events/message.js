@@ -1,7 +1,7 @@
 require('dotenv').config(); //gets dotenv for all the secret stuff
 const log = new discord.WebhookClient(process.env.WEBHOOKID, process.env.WEBHOOKTOKEN); // logging place
 
-module.exports = () => {
+module.exports = (message) => {
      if(!message.content.startsWith(mainjson.settings.prefix)) return;
      if(message.author.bot) return;
      if(message.channel.type === "DM") return;
