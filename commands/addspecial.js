@@ -1,9 +1,9 @@
 const user = mongoose.model('userSpecial');
 
 module.exports.run = async (bot, message, args) => {
-	console.log(args[2])
+	console.log(args[0], args[1], args[2])
 	if (!message.author.id == bot.owner) return  console.log("1");
-	let mentioned = message.content.mentions.first() || args[1];
+	let mentioned = message.content.mentions.members.first() || args[1];
 	let special = args[2];
 	message.channel.send(`Adding special role ${special} to user ${mentioned}..`);
 	console.log("2")
