@@ -15,12 +15,11 @@ module.exports.run = (bot, message, args) => {
     .setColor("GREEN")
     .setFooter("Eval")
 
-    return message.channel.send({embed: em}).then(m => m.delete(5000))
+    return message.channel.send({embed: em})
   }).catch(err => {
     console.error(err);
     err = err.toString();
 	
-    if (err.includes("Supplied options is not an object.")) return;
     if (err.includes(bot.token)) err = err.replace(bot.token, 'Nice try.');
 
     const em = new discord.MessageEmbed()
