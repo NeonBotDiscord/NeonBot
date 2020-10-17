@@ -1,3 +1,5 @@
+const user = mongoose.model('userSettings');
+
 module.exports.run = (bot, message, args) => {
   if (message.author.id == bot.owner) {
     const content = message.content.split(' ').slice(1).join(' ');
