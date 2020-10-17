@@ -18,7 +18,7 @@ global.discord = require('discord.js');
 global.log = new discord.WebhookClient(process.env.WEBHOOKID, process.env.WEBHOOKTOKEN);
 const fs = require('fs');
 global.mongoose = require('mongoose')
-global.db = mongoose.connect(`${process.env.DBSERVERLOGIN}`,{
+global.db = mongoose.connect(`${process.env.DB_SERVERLOGIN}`,{
         useNewUrlParser: true,
         useUnifiedTopology: true
 }).then(() => console.log("Mongoose has connected."))
