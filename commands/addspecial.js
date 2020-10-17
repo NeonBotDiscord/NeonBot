@@ -3,14 +3,14 @@ const user = mongoose.model('userSpecial');
 module.exports.run = async (bot, message, args) => {
 	console.log(args[0], args[1], args[2])
 	if (!message.author.id == bot.owner) return  console.log("1");
-	let mentioned = message.content.mentions.members.first() || args[1];
-	let special = args[2];
-	message.channel.send(`Adding special role ${special} to user ${mentioned}..`);
+	let mentioned = message.mentions.members.first()
+	let special = args[1];
+	message.channel.send(`Adding special role ${special} to user ${mentioned.id}..`);
 	console.log("2")
 	if (special == 'botmod') {
 		const newUser = new user({
-			user: message.author.username,
-			id: message.author.id,
+			user: mentioned.user.username,
+			id: mentioned.id,
 			isBotMod: true,
 		});
 		newUser.save();
