@@ -17,7 +17,8 @@ module.exports.run = (bot, message, args) => {
   }).catch(err => {
     console.error(err);
     err = err.toString();
-
+	
+    if (err.includes("Supplied options is not an object.")) return;
     if (err.includes(bot.token)) err = err.replace(bot.token, 'Nice try.');
 
     const em = new discord.MessageEmbed()
