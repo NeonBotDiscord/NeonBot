@@ -7,7 +7,7 @@ module.exports.run = (bot, message, args) => {
     if (typeof output !== 'string') output = require('util').inspect(output, { depth: 0 });
     if (output.includes(bot.token)) output = output.replace(bot.token, 'Nice try.');
     
-    const em = new discord.RichEmbed()
+    const em = new discord.MessageEmbed()
     .addField("Eval returned:", "```js\n"+output+"```")
     .setTimestamp()
     .setColor("GREEN")
@@ -20,7 +20,7 @@ module.exports.run = (bot, message, args) => {
 
     if (err.includes(bot.token)) err = err.replace(bot.token, 'Nice try.');
 
-    const em = new discord.RichEmbed()
+    const em = new discord.MessageEmbed()
     .addField("Eval returned:", "```js\n"+err+"```")
     .setTimestamp()
     .setColor("RED")
