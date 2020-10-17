@@ -1,20 +1,17 @@
-const user = mongoose.model('userSpecial');
+const user = mongoose.model('userSettings');
 
 module.exports.run = async (bot, message, args) => {
-	console.log(args[0], args[1], args[2])
-	if (!message.author.id == bot.owner) return  console.log("1");
-	let mentioned = message.mentions.members.first()
+	if (!message.author.id == bot.owner) return console.log('1');
+	let mentioned = message.mentions.members.first();
 	let special = args[1];
-	message.channel.send(`Adding special role ${special} to user ${mentioned.id}..`);
-	console.log("2")
-	if (special == 'botmod') {
+	if (special == 'mod') {
 		const newUser = new user({
 			user: mentioned.user.username,
 			id: mentioned.id,
 			isBotMod: true,
 		});
 		newUser.save();
-		console.log("3")
+		message.channel.send('Added user settings to the database');
 	} else {
 		if (special == 'special') {
 			const newUser = new user({
@@ -23,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
 				isSpecial: true,
 			});
 			newUser.save();
-			console.log("3")
+			message.channel.send('Added user settings to the database');
 		}
 	}
 };
