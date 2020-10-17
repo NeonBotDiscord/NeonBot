@@ -1,5 +1,5 @@
 module.exports.run = async (bot, message, args) => {
-	let member = message.mentions.members.first();
+	let member = message.mentions.members.first() || message.author
 	let uinfoembed = new discord.MessageEmbed()
 		.setTitle(`Info for the user ${member.displayName}`)
 		.setAuthor('NeonBot')

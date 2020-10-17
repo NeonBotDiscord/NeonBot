@@ -16,11 +16,16 @@ console.log('Starting NeonBot');
 require('dotenv').config();
 global.discord = require('discord.js');
 global.log = new discord.WebhookClient(process.env.WEBHOOKID, process.env.WEBHOOKTOKEN);
+const fs = require('fs');
+global.mongoose = require('mongoose')
+global.db = mongoose.connect(process.env.DBSERVERLOGIN,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+})
 const bot = new discord.Client({ disableEveryone: true });
 bot.commands = new discord.Collection();
 bot.prefix = process.env.PREFIX;
 bot.owner = '399973532265742336';
-const fs = require('fs');
 
 fs.readdir('./commands/', (err, files) => {
 	if (err) console.log(`${err}`);
@@ -39,6 +44,18 @@ fs.readdir('./commands/', (err, files) => {
 
 /* Boilerplate End */
 
+/* Database stuff cause i cba making a schema file */
+
+const schemaspecial = mongoose.Schema({
+        // this is just an example, you don't have to use these specific details
+        // key: value - this can be set/read just like objects.
+        user: String,
+        id: String,
+        isBotMod: Boolean,
+        isSpecial: Boolean
+      })
+mongoose.model("userSpecial", schemaspecial)
+
 /* Login */
 
 bot.login(process.env.BOT_TOKEN);
@@ -50,7 +67,7 @@ bot.on('ready', async () => {
 });
 
 bot.on('message', async (message) => {
-     if(!message.content.startsWith(bot.prefix)) return;
+	if(!message.content.startsWith(bot.prefix)) return;
      if(message.author.bot) return;
      if(message.channel.type === "DM") return;
      let ArrayMessage = message.content.slice(bot.prefix.length).split(' ')
