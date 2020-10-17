@@ -18,10 +18,12 @@ global.discord = require('discord.js');
 global.log = new discord.WebhookClient(process.env.WEBHOOKID, process.env.WEBHOOKTOKEN);
 const fs = require('fs');
 global.mongoose = require('mongoose')
-global.db = mongoose.connect(process.env.DBSERVERLOGIN,{
+mongoose.connect(process.env.DBSERVERLOGIN,{
         useNewUrlParser: true,
         useUnifiedTopology: true
 })
+.then(() => console.log("Mongoose has connected."))
+.catch(err => console.log(`Mongoose failed to connect. Error: ${err}`))
 const bot = new discord.Client({ disableEveryone: true });
 bot.commands = new discord.Collection();
 bot.prefix = process.env.PREFIX;
