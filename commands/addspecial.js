@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
 };
 
 module.exports.help = {
-	name: '',
+	name: 'addspecial',
 	usage: `nb?`,
 	owneronly: 'yes',
 	permissions: 'None',
