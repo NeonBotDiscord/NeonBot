@@ -1,12 +1,10 @@
 /*
-
 Neon Bot || Made by Neon Richards
 Current version: Release 1.6.0
 Global Prefix: nb?
 Discord Server: https://discord.gg/ZJq6jvH
 Bot Invite: https://discord.com/oauth2/authorize?client_id=728101901668843591&permissions=-1&scope=bot
 Date of Creation: 11th of August 2020
-
 */
 
 /* Boilerplate Start */
@@ -55,7 +53,7 @@ const schemaspecial = mongoose.Schema({
         isBotMod: Boolean,
         isSpecial: Boolean
       })
-mongoose.model("userSpecial", schemaspecial)
+mongoose.model("userSettings", schemaspecial)
 
 /* Login */
 
