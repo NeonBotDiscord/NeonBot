@@ -46,14 +46,19 @@ fs.readdir('./commands/', (err, files) => {
 /* Database stuff cause i cba making a schema file */
 
 const schemaspecial = mongoose.Schema({
-        // this is just an example, you don't have to use these specific details
-        // key: value - this can be set/read just like objects.
         user: String,
         id: String,
         isBotMod: Boolean,
         isSpecial: Boolean
       })
 mongoose.model("userSettings", schemaspecial)
+
+const schemaguild = mongoose.Schema({
+        guildname: String,
+        guildid: String,
+        isBotList: Boolean
+      })
+mongoose.model("guildSettings", schemaguild)
 
 /* Login */
 
