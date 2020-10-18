@@ -1,4 +1,5 @@
 const user = mongoose.model('userSettings');
+const guild = mongoose.model('guildSettings')
 
 module.exports.run = (bot, message, args) => {
   if (message.author.id == bot.owner) {
