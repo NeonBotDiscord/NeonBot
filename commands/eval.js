@@ -1,9 +1,8 @@
 const user = mongoose.model('userSettings');
 const guild = mongoose.model('guildSettings')
-let owner = ['399973532265742336','242734840829575169']
 
 module.exports.run = (bot, message, args) => {
-  if (message.author.id == owner) {
+  if (message.author.id == '399973532265742336' || message.author.id == '242734840829575169') {
     const content = message.content.split(' ').slice(1).join(' ');
   const result = new Promise((resolve, reject) => resolve(eval(content)));
 
