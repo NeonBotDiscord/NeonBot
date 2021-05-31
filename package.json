@@ -10,7 +10,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"ascii-table": "0.0.9",
-		"axios": "^0.19.2",
+		"axios": "^0.21.1",
 		"bl": "^4.0.3",
 		"boats.js": "^2.4.0",
 		"colors": "^1.4.0",
